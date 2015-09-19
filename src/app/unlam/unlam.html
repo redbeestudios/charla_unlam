@@ -1,0 +1,42 @@
+<section class="jumbotron">
+<h1>Universidad Nacional de la Matanza</h1>
+</section>
+
+<div class="techs" layout-align="center">
+	<md-content layout-padding flex="33">
+		<form name="alumnoForm" novalidate>
+			<div layout layout-sm="column">
+				<md-input-container flex>
+		          <label>Nombre</label>
+		          <input ng-model="unlam.alumno.nombre" name="Nombre" required>
+		          <div ng-messages="alumnoForm.nombre.$error">
+		          	<div ng-message="required">Ingrese un nombre de alumno</div>
+		          </div>
+		        </md-input-container>
+		    </div>	
+		    <div layout layout-sm="column">
+				<md-input-container flex>
+		          <label>Apellido</label>
+		          <input ng-model="unlam.alumno.apellido" name="apellido" md-maxlength="15">
+		          <div ng-messages="alumnoForm.apellido.$error">
+		          	<div ng-message="md-maxlength">Máximo 15 caracteres</div>
+		          </div>	
+		        </md-input-container>
+		    </div>	
+		    <div layout layout-sm="column">
+				<md-input-container flex>
+		          <label>Email</label>
+		          <input type="email" ng-model="unlam.alumno.email" name="email" required email>
+		          <div ng-messages="alumnoForm.email.$error">
+		          	<div ng-message="required">Ingrese un email</div>
+		          	<div ng-message="email">Ingrese un email valido</div>
+		          </div>
+		        </md-input-container>
+		    </div>	
+		    <div flex offset="50">
+		        <md-button class="md-raised" ng-click="unlam.reset()">Cancelar</md-button>
+	      		<md-button class="md-raised md-primary" ng-disabled="alumnoForm.$invalid">Guardar</md-button>
+      		</div>
+		</form>
+	</md-content>
+</div>

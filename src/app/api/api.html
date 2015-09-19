@@ -1,0 +1,24 @@
+<section class="jumbotron">
+<h1>Universidad Nacional de la Matanza</h1>
+</section>
+
+<div class="techs" layout-align="center">
+
+	<md-content layout-padding flex="33">
+		<form novalidate ng-submit="api.buscar()">
+			<div layout layout-sm="column">
+				<md-input-container flex>
+		          <label>Buscar un repo en github</label>
+		          <input ng-model="api.query" name="search">
+		        </md-input-container>
+		    </div>	
+		</form>
+		<md-content layout-padding flex="33">
+			<ul>
+				<li ng-repeat="r in api.repositories">
+					<span ng-bind="r.name"></span>
+				</li>
+			<ul>
+		</md-content>
+	</md-content>
+</div>
